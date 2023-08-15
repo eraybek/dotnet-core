@@ -36,6 +36,7 @@ namespace WebApi.AddControllers
         public IActionResult GetById(int id)
         {
             GetByIdQuery query = new GetByIdQuery(_context);
+            query.BookId = id;
             var result = query.Handle();
             return Ok(result);
         }
